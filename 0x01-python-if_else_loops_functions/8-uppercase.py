@@ -3,7 +3,10 @@
 def uppercase(str):
     for ch in str:
         in_ascii = ord(ch)
+        char = ''
         if in_ascii in range(ord('a'), ord('z') + 1):
-            print("{}".format(chr(in_ascii - 32)), end="")
+            char = chr(in_ascii - 32)
         else:
-            print(ch, end="")
+            char = ch
+        print("{:s}".format(char), end="")
+    print('')
