@@ -24,3 +24,18 @@ class TestBase(unittest.TestCase):
         p8 = pep8.StyleGuide(quiet=True)
         p = p8.check_files(['tests/test_base.py'])
         self.assertEqual(p.total_errors, 0, "fix pep8")
+
+    def test_base_for_id(self):
+        """
+            Test check for id
+        """
+
+        Base.__nb_objects = 0
+        b1 = Base()
+        b2 = Base()
+        b3 = Base(10)
+        b4 = Base()
+        self.assertEqual(b1.id, 1)
+        self.assertEqual(b2.id, 2)
+        self.assertEqual(b3.id, 10)
+        self.assertEqual(b4.id, 3)
