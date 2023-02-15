@@ -57,11 +57,11 @@ class Rectangle(Base):
         '''
         self.setter_validation("x", value)
         self.__x = value
-
+	
 	@property
-    def y(self):
-        '''
-            __y getter
+	def y(self):
+		'''
+			__y getter
         '''
         return self.__y
 
