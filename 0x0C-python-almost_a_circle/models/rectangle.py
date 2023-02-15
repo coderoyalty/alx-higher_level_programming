@@ -31,7 +31,6 @@ class Rectangle(Base):
         '''
             Setting private attribute
         '''
-        self.setter_validation("width", value)
         self.__width = value
 
     @property
@@ -46,7 +45,6 @@ class Rectangle(Base):
         '''
             Setting private attribute
         '''
-        self.setter_validation("height", value)
         self.__height = value
 
     @property
@@ -61,7 +59,6 @@ class Rectangle(Base):
         '''
             set private attribute
         '''
-        self.setter_validation("x", value)
         self.__x = value
 
     @property
@@ -76,5 +73,4 @@ class Rectangle(Base):
         '''
             set private attribute
         '''
-        self.setter_validation("y", value)
         self.__y = value
