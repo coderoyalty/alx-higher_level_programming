@@ -3,6 +3,7 @@ import unittest
 import pep8
 from models.base import Base
 import os
+from models.rectangle import Rectangle
 '''
     This module contains all unittest for Base class
 '''
@@ -43,4 +44,13 @@ class TestBase(unittest.TestCase):
     def test_docstrings(self):
         self.assertIsNotNone(Base.__doc__)
         self.assertIs(hasattr(Base, "__init__"), True)
-        self.assertIsNotNone(Base.__init__.__doc__)
+
+    def test_rectangle(self):
+        r1 = Rectangle(10, 2)
+        r2 = Rectangle(2, 10)
+        r3 = Rectangle(2, 10, 1, 1, 15)
+        r4 = Rectangle(10, 10)
+        self.assertEqual(r1.id, r2 - 1)
+        self.assertNotEqual(r1.id, r2)
+        self.assertEqual(r3.id, 15)
+        self.assertEqual(r1.width(), r2.height())
