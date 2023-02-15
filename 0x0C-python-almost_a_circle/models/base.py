@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+    Creating the base class of all other classes for this project.
+"""
 
 
 class Base:
