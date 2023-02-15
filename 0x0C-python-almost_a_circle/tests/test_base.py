@@ -43,4 +43,4 @@ class TestBase(unittest.TestCase):
     def test_docstrings(self):
         self.assertIsNotNone(Base.__doc__)
         self.assertIs(hasattr(Base, "__init__"), True)
-        self.assertIsNotNone(base.__init__.__doc__)
+        self.assertIsNotNone(Base.__init__.__doc__)
