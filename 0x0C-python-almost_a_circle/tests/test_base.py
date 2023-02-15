@@ -50,7 +50,7 @@ class TestBase(unittest.TestCase):
         r2 = Rectangle(2, 10)
         r3 = Rectangle(2, 10, 1, 1, 15)
         r4 = Rectangle(10, 10)
-        self.assertEqual(r1.id, r2 - 1)
+        self.assertEqual(r1.id, r2.id - 1)
         self.assertNotEqual(r1.id, r2)
         self.assertEqual(r3.id, 15)
         self.assertEqual(r1.width(), r2.height())
