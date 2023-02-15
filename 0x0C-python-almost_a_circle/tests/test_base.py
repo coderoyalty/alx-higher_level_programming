@@ -39,3 +39,8 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b2.id, 2)
         self.assertEqual(b3.id, 10)
         self.assertEqual(b4.id, 3)
+
+    def test_docstrings(self):
+        self.assertIsNotNone(Base.__doc__)
+        self.assertIs(hasattr(Base, "__init__"), True)
+        self.assertIsNotNone(base.__init__.__doc__)
