@@ -19,3 +19,12 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def validator(attribute, value):
+        if type(value) != int:
+            raise TypeError(f"{attribute} must be an integer")
+        if attribute is in ["x", "y"] and value < 0:
+            raise ValueError(f"{attribute} must be >= 0")
+        elif value <= 0:
+            raise ValueError(f"{attribute} must be > 0")
