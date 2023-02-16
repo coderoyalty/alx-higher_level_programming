@@ -92,7 +92,7 @@ class Rectangle(Base):
         rectangle = ""
         print("\n" * self.y, end="")
         for _ in range(self.height):
-            rectangle += ("\n" * self.x) + ("#" * self.width) + '\n'
+            rectangle += (" " * self.x) + ("#" * self.width) + '\n'
         print(rectangle, end="")
 
     def __str__(self):
