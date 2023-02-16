@@ -90,8 +90,9 @@ class Rectangle(Base):
             method that prints the rectangle area
         '''
         rectangle = ""
+        print("\n" * self.y, end="")
         for _ in range(self.height):
-            rectangle += "#" * self.width + '\n'
+            rectangle += ("\n" * self.x) + ("#" * self.width) + '\n'
         print(rectangle, end="")
 
     def __str__(self):
