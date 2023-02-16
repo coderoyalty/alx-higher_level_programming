@@ -22,6 +22,13 @@ class Base:
 
     @staticmethod
     def validator(attribute, value):
+        '''
+            static method to validates an attribute of rectangle
+            Arguments:
+                @attribute: the attribute to check for.
+                @value: the value passed
+        '''
+
         if type(value) != int:
             raise TypeError(f"{attribute} must be an integer")
         if attribute in ["x", "y"]:
