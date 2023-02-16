@@ -89,6 +89,6 @@ class Rectangle(Base):
         '''
             method that prints the rectangle area
         '''
-        for j in height:
-            for i in width:
+        for j in self.height:
+            for i in self.width:
                 print("#", end="")
