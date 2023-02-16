@@ -53,4 +53,4 @@ class TestBase(unittest.TestCase):
         self.assertEqual(r1.id, r2.id - 1)
         self.assertNotEqual(r1.id, r2)
         self.assertEqual(r3.id, 15)
-        self.assertEqual(r1.width(), r2.height())
+        self.assertEqual(r1.width, r2.height)
