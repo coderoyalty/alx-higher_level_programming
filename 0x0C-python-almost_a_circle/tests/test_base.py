@@ -57,3 +57,5 @@ class TestBase(unittest.TestCase):
         with self.assertRaises((TypeError, ValueError)):
             Rectangle(10, 2.5)
             Rectangle(0, 10)
+        self.assertEqual(r1.area(), r2.area())
+        self.assertNotEqual(r1.area(), r4.area())
