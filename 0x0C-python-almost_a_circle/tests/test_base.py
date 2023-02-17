@@ -89,7 +89,7 @@ class TestBase(unittest.TestCase):
         s1 = Square(10)
         s2 = Square(20)
         self.assertEqual(s1.area(), 100)
-        self.assertEqual(s1.area(), 400)
+        self.assertEqual(s2.area(), 400)
         self.assertNotEqual(s1.area(), s2.area())
 
     def test_square_update(self):
@@ -97,6 +97,6 @@ class TestBase(unittest.TestCase):
         s2 = Square(20)
         self.assertNotEqual(s1.area(), s2.area())
         s1.update(2, 20)
-        self.assertNotEqual(s1.area(), s2.area())
+        self.assertEqual(s1.area(), s2.area())
         s1.update(size=10)
         self.assertNotEqual(s1.area(), s2.area())
