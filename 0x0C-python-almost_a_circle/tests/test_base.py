@@ -4,6 +4,7 @@ import pep8
 from models.base import Base
 import os
 from models.rectangle import Rectangle
+from models.square import Square
 '''
     This module contains all unittest for Base class
 '''
@@ -14,8 +15,12 @@ class TestBase(unittest.TestCase):
         """
             Tests for pep8 model
         """
+        files = []
+        files.append('models/base.py')
+        files.append('models/rectangle.py')
+        files.append('models/square.py')
         p8 = pep8.StyleGuide(quiet=True)
-        p = p8.check_files(['models/base.py', 'models/rectangle.py'])
+        p = p8.check_files(files)
         self.assertEqual(p.total_errors, 0, "fix pep8")
 
     def test_pep8_test(self):
@@ -49,16 +54,49 @@ class TestBase(unittest.TestCase):
         r1 = Rectangle(10, 2)
         r2 = Rectangle(2, 10)
         r3 = Rectangle(2, 10, 1, 1, 15)
-        r4 = Rectangle(10, 10)
         self.assertEqual(r1.id, r2.id - 1)
-        self.assertNotEqual(r1.id, r2)
+        self.assertNotEqual(r1.id, r2.id)
         self.assertEqual(r3.id, 15)
+
+    def test_rect_area(self):
+        r1 = Rectangle(10, 2)
+        r2 = Rectangle(2, 10)
+        r3 = Rectangle(10, 10)
         self.assertEqual(r1.width, r2.height)
+        self.assertEqual(r1.area(), r2.area())
+        self.assertNotEqual(r1.area(), r3.area())
+
+    def test_rect_exception_error(self):
         with self.assertRaises((TypeError, ValueError)):
             Rectangle(10, 2.5)
             Rectangle(0, 10)
-        self.assertEqual(r1.area(), r2.area())
-        self.assertNotEqual(r1.area(), r4.area())
+
+    def test_rect_update(self):
+        r1 = Rectangle(10, 2)
+        r2 = Rectangle(2, 10)
         r1.update(89, 15, 30)
         r2.update(90, 30, 30)
         self.assertNotEqual(r1.area(), r2.area())
+
+    def test_square(self):
+        s1 = Square(10)
+        s2 = Square(20)
+        s3 = Square(30)
+        self.assertNotEqual(s1.size, s2.size)
+        self.assertEqual(s3.size, 30)
+
+    def test_square_area(self):
+        s1 = Square(10)
+        s2 = Square(20)
+        self.assertEqual(s1.area(), 100)
+        self.assertEqual(s1.area(), 400)
+        self.assertNotEqual(s1.area(), s2.area())
+
+    def test_square_update(self):
+        s1 = Square(10)
+        s2 = Square(20)
+        self.assertNotEqual(s1.area(), s2.area())
+        s1.update(2, 20)
+        self.assertNotEqual(s1.area(), s2.area())
+        s1.update(size=10)
+        self.assertNotEqual(s1.area(), s2.area())
