@@ -114,3 +114,11 @@ class TestBase(unittest.TestCase):
         self.assertEqual(s1.area(), s2.area())
         s1.update(size=10)
         self.assertNotEqual(s1.area(), s2.area())
+
+    def test_square_dictionary(self):
+        s1 = Square(10, 2, 1)
+        s2 = Square(1, 1)
+
+        sdict1 = s1.to_dictionary()
+        s2.update(**s1_dictionary)
+        self.assertEqual(s1, s2)

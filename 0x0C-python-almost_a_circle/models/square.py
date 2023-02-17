@@ -59,3 +59,12 @@ class Square(Rectangle):
                     self.x = arg
                 elif npos == 3:
                     self.y = arg
+
+    def to_dictionary(self):
+        '''
+            convert self class to dictionary
+        '''
+        return {
+            "id": self.id, "size": self.width,
+            "x": self.x, "y": self.y
+        }
