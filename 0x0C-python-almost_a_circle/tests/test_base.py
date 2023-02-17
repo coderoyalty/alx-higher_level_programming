@@ -121,4 +121,4 @@ class TestBase(unittest.TestCase):
 
         sdict1 = s1.to_dictionary()
         s2.update(**sdict1)
-        self.assertEqual(s1, s2)
+        self.assertEqual(sdict1, s2.to_dictionary())
