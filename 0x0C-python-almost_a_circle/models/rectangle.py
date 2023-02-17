@@ -109,8 +109,8 @@ class Rectangle(Base):
             assigns an argument to each attribute
         '''
         args_len = len(args)
-        if args_len == 0:
-            for key, value in kwargs.iteritems():
+        if args_len == 0 and kwargs is not None:
+            for key, value in kwargs.items():
                 self.__setattr__(key, value)
             return
         try:
