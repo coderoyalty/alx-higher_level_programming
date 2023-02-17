@@ -78,6 +78,20 @@ class TestBase(unittest.TestCase):
         r2.update(90, 30, 30)
         self.assertNotEqual(r1.area(), r2.area())
 
+    def test_rect_dict(self):
+        r1 = Rectangle(10, 2, 5, 10, 50)
+        r2 = Rectangle(10, 5, 2, 10, 50)
+
+        rdict1 = r1.to_dictionary()
+        rdict2 = r2.to_dictionary()
+
+        self.assertNotEqual(rdict1, rdict2)
+        r1.update(width=4,height=3, x=5, y=5)
+        r2.update(width=4,height=3, x=5, y=5)
+        rdict1 = r1.to_dictionary()
+        rdict2 = r2.to_dictionary()
+        self.assertEqual(rdict1, rdict2)
+
     def test_square(self):
         s1 = Square(10)
         s2 = Square(20)
