@@ -65,5 +65,5 @@ class Base:
                 item = item.to_dictionary()
                 json_obj = json.loads(cls.to_json_string(item))
                 buffer.append(json_obj)
-            with open(filename + '.json', mode="w") as file:
-                json.dumps(buffer, file)
+        with open(filename + '.json', mode="w") as file:
+            json.dumps(buffer, file)
