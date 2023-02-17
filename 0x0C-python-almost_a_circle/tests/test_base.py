@@ -86,8 +86,8 @@ class TestBase(unittest.TestCase):
         rdict2 = r2.to_dictionary()
 
         self.assertNotEqual(rdict1, rdict2)
-        r1.update(width=4,height=3, x=5, y=5)
-        r2.update(width=4,height=3, x=5, y=5)
+        r1.update(width=4, height=3, x=5, y=5)
+        r2.update(width=4, height=3, x=5, y=5)
         rdict1 = r1.to_dictionary()
         rdict2 = r2.to_dictionary()
         self.assertEqual(rdict1, rdict2)
