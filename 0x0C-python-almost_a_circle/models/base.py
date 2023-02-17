@@ -2,6 +2,7 @@
 """
     Creating the base class of all other classes for this project.
 """
+import json
 
 
 class Base:
@@ -36,3 +37,17 @@ class Base:
                 raise ValueError(f"{attribute} must be >= 0")
         elif value <= 0:
             raise ValueError(f"{attribute} must be > 0")
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        '''
+            static method to convert a dictionary to
+            json string.
+            Arguments:
+                @list_dictionaries: list of dictionaries
+        '''
+
+        if list_dictionaries is None:
+            return '[]'
+        else:
+            json.dumps(list_dictionaries)
