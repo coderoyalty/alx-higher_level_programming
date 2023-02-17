@@ -120,5 +120,5 @@ class TestBase(unittest.TestCase):
         s2 = Square(1, 1)
 
         sdict1 = s1.to_dictionary()
-        s2.update(**s1_dictionary)
+        s2.update(**sdict1)
         self.assertEqual(s1, s2)
