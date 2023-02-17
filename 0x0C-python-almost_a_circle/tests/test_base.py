@@ -15,7 +15,7 @@ class TestBase(unittest.TestCase):
             Tests for pep8 model
         """
         p8 = pep8.StyleGuide(quiet=True)
-        p = p8.check_files(['models/base.py'])
+        p = p8.check_files(['models/base.py', 'models/rectangle.py'])
         self.assertEqual(p.total_errors, 0, "fix pep8")
 
     def test_pep8_test(self):
@@ -59,3 +59,6 @@ class TestBase(unittest.TestCase):
             Rectangle(0, 10)
         self.assertEqual(r1.area(), r2.area())
         self.assertNotEqual(r1.area(), r4.area())
+        r1.update(89, 15, 30)
+        r2.update(90, 30, 30)
+        self.assertNotEqual(r1.area(), r2.area())
