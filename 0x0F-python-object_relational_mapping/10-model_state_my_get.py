@@ -24,5 +24,5 @@ if __name__ == '__main__':
     if len(state) != 0:
         print(state[0].id)
     else:
-        print("Nothing found")
+        print("Not found")
  
