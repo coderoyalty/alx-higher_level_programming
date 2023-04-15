@@ -1,10 +1,10 @@
-#!/usr/bin/python3
-
+#!usr/bin/python3
 '''
     class definition of a State.
 '''
 
-import sqlalchemy
+import MySQLdb
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -21,9 +21,5 @@ class State(Base):
         not nullable string.
     """
     __tablename__ = "states"
-    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True,
-                           autoincrement=True,
-                           nullable=False
-                           )
-    name = sqlalchemy.Column(sqlalchemy.String(128),
-                             nullable=False)
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    name = Column(String(128), nullable=False)
