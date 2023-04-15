@@ -2,10 +2,10 @@
 
 import sys
 from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
-Session = sessionmaker()
 
 if __name__ == '__main__':
     engine = create_engine(
@@ -14,6 +14,7 @@ if __name__ == '__main__':
         pool_pre_ping=True)
 
     Base.metadata.create_all(engine)
+    Session = sessionmaker()
     Session.configure(bind=engine)
 
     session = Session()
