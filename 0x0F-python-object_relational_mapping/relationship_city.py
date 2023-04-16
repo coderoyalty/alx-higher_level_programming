@@ -2,10 +2,10 @@
 '''class definition of a City.
 '''
 
-from relationship_state import Base
 from sqlalchemy import Column, Integer,\
     String,\
     ForeignKey
+from relationship_state import Base
 
 
 class City(Base):
