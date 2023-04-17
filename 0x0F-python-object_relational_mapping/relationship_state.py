@@ -1,9 +1,8 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 '''
-    class definition of a State.
+class definition of a State.
 '''
 
-import MySQLdb
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
