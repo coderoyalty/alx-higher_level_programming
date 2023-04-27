@@ -21,7 +21,7 @@ def find_peak(arr):
             return arr[1]
     else:
         peak = arr[0]
-        for i in range(1, length):
-            if peak > arr[i]:
-                peak = arr[i]
+        for el in arr:
+            if peak > el:
+                peak = el
         return peak
