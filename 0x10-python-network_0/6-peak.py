@@ -15,7 +15,10 @@ def find_peak(arr):
     elif length == 1:
         return arr[0]
     elif length == 2:
-        return arr if arr[0] > arr[1]: arr[0] else arr[1]
+        if arr[0] > arr[1]:
+            return arr[0]
+        else:
+            return arr[1]
     else:
         peak = arr[0]
         for i in range(1, length):
