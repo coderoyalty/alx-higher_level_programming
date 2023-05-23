@@ -14,14 +14,20 @@ def find_peak(arr):
         return None
     elif length == 1:
         return arr[0]
-    elif length == 2:
-        if arr[0] > arr[1]:
-            return arr[0]
-        else:
-            return arr[1]
+    elif arr[0] >= arr[1]:
+        return arr[0]
+    elif arr[-1] >= arr[-2]:
+        return arr[-1]
     else:
-        peak = arr[0]
-        for el in arr:
-            if peak < el:
-                peak = el
-        return peak
+        for i in range(0, length):
+            ''' checks if it a peak to its neighbors '''
+            element = arr[i]
+            if i == 0:
+                if element >= arr[i+1]:
+                    return element
+            elif i == length - 1:
+                if element >= arr[i-1]:
+                    return element
+            elif element >= arr[i-1] and element >= arr[i+1]:
+                return element
+        
