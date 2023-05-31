@@ -1,3 +1,4 @@
+// list a movie
 $(document).ready(function() {
     const url = 'https://swapi-api.alx-tools.com/api/films/?format=json';
     $.getJSON(url, function (data) {
