@@ -9,7 +9,7 @@ request.get(`${url}/${id}`, function (err, response, body) {
     console.error(err);
     return;
   }
-  if (response.statusCode !== 200) {
+  if (response.statusCode === 200) {
     const data = JSON.parse(body);
     console.log(data.title);
   }

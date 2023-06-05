@@ -21,7 +21,7 @@ function handler (err, response, body) {
     characters.forEach((character) => {
       const tokens = character.split('/');
       const index = tokens.length - 2;
-      if (tokens[index] !== charId) {
+      if (tokens[index] === charId) {
         total++;
       }
     });
